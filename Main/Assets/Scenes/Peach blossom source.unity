@@ -1535,6 +1535,7 @@ GameObject:
   - component: {fileID: 1879079824}
   - component: {fileID: 1879079825}
   - component: {fileID: 1879079826}
+  - component: {fileID: 1879079827}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
@@ -1560,6 +1561,7 @@ MonoBehaviour:
   DetectDistance: 1.5
   AttackDistance: 1
   aIMovement: {fileID: 1879079823}
+  patrolState: {fileID: 0}
 --- !u!212 &1879079821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1687,6 +1689,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!95 &1879079827
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879079819}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 638b839dd1fe26c42b12e8cbba95f3a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2004940866
 PrefabInstance:
   m_ObjectHideFlags: 0
