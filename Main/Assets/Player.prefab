@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 3158160675940648337}
   - component: {fileID: 3158160675940648336}
   - component: {fileID: 3158160675940648339}
+  - component: {fileID: 519363938}
+  - component: {fileID: 2178996690920866334}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -72,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1015222621
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b0b77ecc399484253a1d1e311430e491, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cada32f8375c3d8479e4935e248b8b76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66ab07e666234a1cbf5885847763485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseMovement: {fileID: 0}
+  attack: {fileID: 0}
+  health: {fileID: 0}
   DetectDistance: 0
+  AttackDistance: 0
   PlayerMove: {fileID: 3158160675940648337}
 --- !u!61 &3158160675940648342
 BoxCollider2D:
@@ -116,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.58, y: 5.38}
+    oldSize: {x: 2.01, y: 3.55}
     newSize: {x: 5.58, y: 5.38}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -158,6 +164,8 @@ MonoBehaviour:
   lastMove: {x: 0, y: 0}
   StartPosition: {x: 5.75, y: 0.09, z: 0}
   Chasing: 0
+  animatorControll: {fileID: 519363938}
+  state: 1
 --- !u!95 &3158160675940648336
 Animator:
   serializedVersion: 3
@@ -198,3 +206,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &519363938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158160675940648363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a98d07ed5ce764bb296f60495458a063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3158160675940648336}
+--- !u!114 &2178996690920866334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158160675940648363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04da92efce10b4e1aad1bc2eeab0ffdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  Particle_Blood: {fileID: 0}

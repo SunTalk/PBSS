@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerController : BaseControll
 {
+    public static PlayerController instance;
+
     public PlayerMove PlayerMove;
     //public Attack PlayerAttack;
-    //public Health PlayerHealth;
 
     public override void Start()
     {
         base.Start();
         OnValidate();
+        instance = this;
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class PlayerController : BaseControll
 
     public override void OnValidate()
     {
+        //Debug.Log("OnValidate");
         base.Start();
         PlayerMove = GetComponent<PlayerMove>();
     }

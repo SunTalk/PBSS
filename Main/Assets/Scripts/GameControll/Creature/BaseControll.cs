@@ -13,7 +13,7 @@ public class BaseControll : MonoBehaviour
     public EvadeState evadeState = new EvadeState();
     public BaseMovement baseMovement;
     public Attack attack;
-    //public Health health;
+    public Health health;
     [Header("Collider")]
     public float DetectDistance;
     public float AttackDistance;
@@ -35,12 +35,12 @@ public class BaseControll : MonoBehaviour
     {
         //attack = GetComponent<Attack>();
         //baseMovement = GetComponent<BaseMovement>();
-        //health = GetComponent<Health>();
+        health = GetComponent<Health>();
         DetectDistance = GetComponent<CircleCollider2D>().radius;
 
         Debug.Assert(gameObject.tag != "Untagged", gameObject.name + " Don't set tag");
         //Debug.Assert(attack != null, gameObject.name);
-        //Debug.Assert(health != null, gameObject.name);
+        Debug.Assert(health != null, gameObject.name);
     }
 
     //private void OnDrawGizmos()

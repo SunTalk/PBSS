@@ -6,10 +6,8 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    public float health;
+    public float health = 1f;
     bool dead;
-    [Header("Particle")]
-    public ParticleSystem Particle_Blood;
 
     private void Start()
     {
@@ -46,6 +44,6 @@ public class Health : MonoBehaviour
 
     private void OnValidate()
     {
-        Debug.Assert(Particle_Blood != null);
+
     }
 }
