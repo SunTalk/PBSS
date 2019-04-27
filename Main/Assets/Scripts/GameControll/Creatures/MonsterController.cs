@@ -12,7 +12,7 @@ public class MonsterController : BaseControll
         base.Start();
 
         ChangeState(idleState);
-        //patrolState.Enter(this);
+        patrolState.Enter(this);
 
         OnValidate();
     }
