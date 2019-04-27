@@ -25,8 +25,6 @@ public class PlayerController : BaseControll
         //}
     }
 
-
-
     private void OnValidate()
     {
         // Debug.Log("OnValidate");

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AIMovement : BaseMovement
 {
     public Attack attack;
+    public PatrolState patrolState;
 
     private void Start()
     {
@@ -25,6 +26,10 @@ public class AIMovement : BaseMovement
             {
                 baseControll.ChangeState(attack);
             }
+        }
+        else if(patrolState.IsNeedPatrol())
+        {
+            Move2PatrolPoint();
         }
         else
         {
@@ -47,10 +52,25 @@ public class AIMovement : BaseMovement
         return false;
     }
 
+    private void Move2PatrolPoint()
+    {
+        float distance = TargetDistance(patrolState.GetPatrolPosition());
+        if (distance > 2)
+        {
+            transform.position = Vector3.Lerp(transform.position, patrolState.GetPatrolPosition(), patrolState.PatrolSpeed * Time.deltaTime);
+        }
+        else
+        {
+            patrolState.SetNextPatrolPoint();
+        }
+    }
+
     public override void OnValidate()
     {
         base.OnValidate();
         attack = GetComponent<Attack>();
+        patrolState = GetComponent<PatrolState>();
+        Debug.Assert(patrolState != null);
         Debug.Assert(attack != null);
     }
 }

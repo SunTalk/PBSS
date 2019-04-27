@@ -73,6 +73,7 @@ public class BaseMovement : MonoBehaviour, Istate
     public virtual void Move(Vector3 direction)
     {
         transform.Translate(direction * Speed * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, transform.position + direction, Speed * Time.deltaTime);
         moving = true;
     }
 

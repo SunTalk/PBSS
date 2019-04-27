@@ -5,15 +5,27 @@ using UnityEngine;
 public class MonsterController : BaseControll
 {
     public AIMovement aIMovement;
-    public PatrolState patrolState = new PatrolState();
 
     public override void Start()
     {
         base.Start();
 
         ChangeState(idleState);
-        //patrolState.Enter(this);
-
+        if (patrolState != null)
+        {
+            //Debug.Log("Evade");
+            patrolState.Enter(this);
+        }
+        else
+        {
+            //Debug.Log("Create");
+            patrolState = new PatrolState();
+            patrolState.Enter(this);
+            if (patrolState != null)
+            {
+                Debug.Log("null");
+            }
+        }
         OnValidate();
     }
 
@@ -29,10 +41,14 @@ public class MonsterController : BaseControll
         aIMovement = GetComponent<AIMovement>();
         attack = GetComponent<Attack>();
         baseMovement = GetComponent<BaseMovement>();
+        patrolState = GetComponent<PatrolState>();
+        deathState = GetComponent<DeathState>();
 
         Debug.Assert(aIMovement != null);
         Debug.Assert(attack != null);
         Debug.Assert(aIMovement != null);
+        Debug.Assert(patrolState != null);
+        Debug.Assert(deathState != null);
         //Debug.Assert(patrolState != null);
     }
 }

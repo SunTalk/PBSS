@@ -23,6 +23,10 @@ public class IdleState : Istate
         {
             baseControll.ChangeState(baseControll.evadeState);
         }
+        else
+        {
+            baseControll.ChangeState(baseControll.patrolState);
+        }
     }
 
     public void Exit()

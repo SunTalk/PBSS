@@ -6,6 +6,7 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
+    public float MaxHealth = 1f;
     public float health = 1f;
     bool dead;
 
@@ -24,6 +25,11 @@ public class Health : MonoBehaviour
         return (int)health;
     }
 
+    public void Heal(float h)
+    {
+        if(health<MaxHealth)health += h;
+    }
+
     public bool TakeDamage(float damage)
     {
         health -= damage;
@@ -38,12 +44,16 @@ public class Health : MonoBehaviour
     private void OnDeath()
     {
         dead = true;
-        Destroy();
+        if (gameObject.tag != "Player") StartCoroutine(Destroy());
     }
-    private void Destroy()
+    private IEnumerator Destroy()
     {
-        //Destroy(gameObject);
-        //gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<BaseControll>().ChangeState(gameObject.GetComponent<BaseControll>().deathState);
+        //transform.
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 

@@ -81,7 +81,7 @@ public class Attack : MonoBehaviour, Istate
 
     private void AttackCommand()
     {
-        //Debug.Log("Attack Player");
+        Debug.Log("Attack Player");
         StartCoroutine(AttackTarget(targetObject.GetComponent<Health>()));
     }
 
@@ -100,7 +100,7 @@ public class Attack : MonoBehaviour, Istate
         if (animationPlay != null) animationPlay(AttackStiffness);
         yield return new WaitForSeconds(1 / AtkSpeed);
 
-        //if( target.TakeDamage(1) ) targetObject = null;
+        target.TakeDamage(1);
 
         AttackStiffness = false;
         if (animationPlay != null) animationPlay(AttackStiffness);
