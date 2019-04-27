@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Dialogue\AllTalk.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialog.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Talker.cs" />
+    <Compile Include="Assets\Scripts\GameControll\AnimationExample\AnimatorControll.cs" />
     <Compile Include="Assets\Scripts\GameControll\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameControll\Creature\AIMovement.cs" />
     <Compile Include="Assets\Scripts\GameControll\Creature\Attack.cs" />
