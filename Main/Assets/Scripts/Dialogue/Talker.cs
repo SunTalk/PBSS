@@ -10,19 +10,20 @@ public class Talker : MonoBehaviour
     public GameObject TitleObject;
     public GameObject contentObject;
     public GameObject MasterObject;
-    public int currentPerson;
-    public int currentTalking;
+    public int current;
+    public int Talkmax;
+    public int currentTalking;  //useless
     public bool isTalking;
 
     public Text[] texs;
-    
+
     // Start is called before the first frame update
     void Start()
     {
+        MasterObject.SetActive(false);
         instace = this;
-
-        currentPerson = 0;
-        currentTalking = 0;
+        current = 0;
+        Talkmax = 0;
         isTalking = false;
         removeTalkDia();
     }
@@ -31,43 +32,87 @@ public class Talker : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            if(isTalking == false)
+
+            bool ispressed = true;
+            if (isTalking == false && ispressed)
             {
                 movebackTalkDia();
                 isTalking = true;
+                RunNextTalk();
+                ispressed = false;
             }
-            if (Talkof_Test_Group(3))
+            else if (Test_of_end(current) && ispressed)
             {
                 removeTalkDia();
+                ispressed = false;
                 isTalking = false;
+                MasterObject.SetActive(false);
             }
+
+            else if(isTalking == true && ispressed)
+            {
+                current++;
+                ispressed = false;
+                RunNextTalk();
+
+            }
+
         }
     }
 
-    public bool Talkof_Test_Group(int max) {
-        //   contentObject.transform.GetComponentInChildren<Text>().text = "Hello!!!";
-        
-        if (currentTalking <=max)
+    public void setTest_Group(int ini , int max)
+    {
+        current = ini;
+        Talkmax = max;
+        MasterObject.transform.Find("TitleofTalkdia").GetComponent<Text>().text = AllTalk.people[current];
+        MasterObject.transform.Find("ContentofTalkDia").GetComponent<Text>().text = AllTalk.contents[current];
+    }
+
+    public bool Test_of_end(int input)
+    {
+        if (input == Talkmax)
         {
-            MasterObject.transform.Find("TitleofTalkdia").GetComponent<Text>().text = AllTalk.people[currentTalking];
-            MasterObject.transform.Find("ContentofTalkDia").GetComponent<Text>().text = AllTalk.contents[currentPerson];
-            currentPerson++; currentTalking++;
+            return true;
+        } else {
             return false;
         }
-        if (currentTalking > max) {
-            return true;
-        }
-        return false;
+    }
+
+    public void RunNextTalk()
+    {
+        MasterObject.transform.Find("TitleofTalkdia").GetComponent<Text>().text = AllTalk.people[current];
+        MasterObject.transform.Find("ContentofTalkDia").GetComponent<Text>().text = AllTalk.contents[current];
     }
 
     public void removeTalkDia()
     {
+
         MasterObject.GetComponent<RectTransform>().localPosition = new Vector2(10000, -1050);
     }
 
     public void movebackTalkDia()
     {
-        MasterObject.GetComponent<RectTransform>().localPosition = new Vector2(0,-50);
+        MasterObject.GetComponent<RectTransform>().localPosition = new Vector2(0, -124);
+    }
+
+
+
+    public void setTalkCont(string input)
+    {
+        Debug.Log(input);
+        switch (input)
+        {
+            case "name":
+                
+                break;
+            case "Trap":
+                Talker.instace.setTest_Group(4,6);
+                MasterObject.SetActive(true);
+                break;
+            default:
+                Debug.Log("Unidentified Contact.");
+                break;
+        }
     }
 
 }
