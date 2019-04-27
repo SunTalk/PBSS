@@ -14,7 +14,7 @@ public class AIMovement : BaseMovement
     public override void UPDATE()
     {
         base.UPDATE();
-        Debug.Log("AIMovement");
+        //Debug.Log("AIMovement");
         if (attack.targetObject != null)
         {
             if (ChaseTarget())

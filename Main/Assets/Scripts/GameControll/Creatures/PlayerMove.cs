@@ -46,8 +46,9 @@ public class PlayerMove : BaseMovement
     #region OnValidate
     public override void OnValidate()
     {
+        base.OnValidate();
         animatorControll = GetComponent<AnimatorControll>();
-        // Debug.Assert(animatorControll != null);
+        //Debug.Assert(animatorControll != null);
     }
     #endregion
 }

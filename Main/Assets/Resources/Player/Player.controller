@@ -9,19 +9,19 @@ AnimatorController:
   m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Idle
+  - m_Name: IsIdle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Up
+  - m_Name: IsUp
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Down
+  - m_Name: IsDown
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -49,10 +49,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Idle
+    m_ConditionEvent: IsIdle
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Down
+    m_ConditionEvent: IsDown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102757746529094278}
@@ -77,10 +77,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Up
+    m_ConditionEvent: IsUp
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Down
+    m_ConditionEvent: IsDown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102757746529094278}
@@ -105,10 +105,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Up
+    m_ConditionEvent: IsUp
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Down
+    m_ConditionEvent: IsDown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102139146684253662}
@@ -133,10 +133,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Idle
+    m_ConditionEvent: IsIdle
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Up
+    m_ConditionEvent: IsUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102139146684253662}
@@ -161,10 +161,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Idle
+    m_ConditionEvent: IsIdle
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Up
+    m_ConditionEvent: IsUp
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102198527142627814}
@@ -189,10 +189,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Idle
+    m_ConditionEvent: IsIdle
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Down
+    m_ConditionEvent: IsDown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102198527142627814}

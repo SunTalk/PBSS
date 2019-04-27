@@ -13,7 +13,7 @@ public class IdleState : Istate
     }
     public void UPDATE()
     {
-        Debug.Log("Idle");
+        //Debug.Log("Idle");
         if (baseControll.attack.targetObject != null)
         {
             baseControll.ChangeState(baseControll.baseMovement);

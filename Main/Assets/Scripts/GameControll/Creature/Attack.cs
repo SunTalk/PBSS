@@ -41,7 +41,7 @@ public class Attack : MonoBehaviour, Istate
     }
     public void UPDATE()
     {
-        Debug.Log("AttackState");
+        //Debug.Log("AttackState");
         if (targetObject == null)
         {
             baseControll.ChangeState(baseControll.idleState);
