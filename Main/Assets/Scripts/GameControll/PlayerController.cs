@@ -2,17 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : BaseControll
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerMove PlayerMove;
+    //public Attack PlayerAttack;
+    //public Health PlayerHealth;
+
+    public override void Start()
     {
-        
+        base.Start();
+        OnValidate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //if (!attack.AttackStiffness)
+        //{
+            PlayerMove.PlayerMoveMent();
+        //}
+    }
+
+    public override void OnValidate()
+    {
+        base.Start();
+        PlayerMove = GetComponent<PlayerMove>();
     }
 }

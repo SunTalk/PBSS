@@ -60,7 +60,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameControll\CameraController.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\AIMovement.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\Attack.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\BaseControll.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\BaseMovement.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\EvadeState.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\Health.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\IdleState.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\Istate.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creature\Movement.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creatures\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\GameControll\MonsterController.cs" />
     <Compile Include="Assets\Scripts\GameControll\MonsterScriptObject.cs" />
     <Compile Include="Assets\Scripts\GameControll\PlantController.cs" />
@@ -68,6 +78,7 @@
     <Compile Include="Assets\Scripts\GameControll\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GameControll\PropController.cs" />
     <Compile Include="Assets\Scripts\GameControll\PropScriptObject.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Singleton.cs" />
     <Compile Include="Assets\Scripts\GameControll\TrapController.cs" />
     <Compile Include="Assets\Scripts\GameControll\TrapScriptObject.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
