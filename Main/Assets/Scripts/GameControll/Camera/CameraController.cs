@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public GameObject Player;
 
     [Header("Camera Range by Tilemap")]
-    public Tilemap tileMap;
+    //public Tilemap tileMap;
     public GameObject CameraLimit;
     private float xMin, xMax, yMin, yMax;
 
@@ -19,8 +19,8 @@ public class CameraController : MonoBehaviour
 
         //Vector3 minTile = tileMap.CellToWorld(tileMap.cellBounds.min);
         //Vector3 maxTile = tileMap.CellToWorld(tileMap.cellBounds.max);
-        Vector3 minTile = -CameraLimit.GetComponent<SpriteRenderer>().sprite.bounds.extents + CameraLimit.transform.position;
-        Vector3 maxTile = CameraLimit.GetComponent<SpriteRenderer>().sprite.bounds.extents + CameraLimit.transform.position;
+        Vector3 minTile = -CameraLimit.GetComponent<Renderer>().bounds.extents + CameraLimit.transform.position;
+        Vector3 maxTile = CameraLimit.GetComponent<Renderer>().bounds.extents + CameraLimit.transform.position;
 
         SetLimits(minTile, maxTile);
     }

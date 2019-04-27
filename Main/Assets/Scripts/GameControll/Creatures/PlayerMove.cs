@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMove : BaseMovement
 {
+    public AnimatorControll animatorControll;
+    public bool state = true;
 
     public void PlayerMoveMent()
     {
@@ -22,11 +24,18 @@ public class PlayerMove : BaseMovement
         {
             Move(Vector3.up);
             lastMove = new Vector2(0, Input.GetAxisRaw("Vertical"));
+            animatorControll.PlayUp();
+            state = false;
         }
         else if (Input.GetKey(KeyCode.S))
         {
             Move(Vector3.down);
             lastMove = new Vector2(0, Input.GetAxisRaw("Vertical"));
+            animatorControll.PlayDown();
+            state = true;
+        }
+        else if( state ){
+            animatorControll.PlayIdle();
         }
 
         if (animationPlay != null)
@@ -35,4 +44,13 @@ public class PlayerMove : BaseMovement
         }
 
     }
+
+    #region OnValidate
+    public override void OnValidate()
+    {
+        base.OnValidate();
+        animatorControll = GetComponent<AnimatorControll>();
+        //Debug.Assert(animatorControll != null);
+    }
+    #endregion
 }

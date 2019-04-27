@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -41,21 +42,30 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BackGround
+  - name: bg
+    uniqueID: 3528335869
+    locked: 0
+  - name: one
     uniqueID: 3959817549
     locked: 0
-  - name: Plant
+  - name: two
     uniqueID: 3716403107
     locked: 0
-  - name: Prop
+  - name: three
     uniqueID: 1766729713
     locked: 0
-  - name: Trap
+  - name: four
     uniqueID: 3550329355
     locked: 0
-  - name: Monster
+  - name: five
     uniqueID: 372767667
     locked: 0
-  - name: Player
+  - name: sixe
     uniqueID: 3279744675
+    locked: 0
+  - name: seven
+    uniqueID: 3941002073
+    locked: 0
+  - name: eight
+    uniqueID: 2322268697
     locked: 0
