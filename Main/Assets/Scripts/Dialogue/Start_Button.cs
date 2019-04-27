@@ -25,5 +25,10 @@ public class Start_Button : MonoBehaviour
         menu.SetActive(false);
         Talker.instace.MasterObject.SetActive(true);
         player.SetActive(true);
+        // first talk
+        Talker.instace.movebackTalkDia();
+        Talker.instace.isTalking = true;
+        Talker.instace.RunNextTalk();
+       // Talker.instace.ispressed = false;
     }
 }

@@ -17,6 +17,7 @@ public class Heart_Pic : MonoBehaviour
     void Start()
     {
         AddHeart();
+        //heartpict = this;
     }
 
     // Update is called once per frame
