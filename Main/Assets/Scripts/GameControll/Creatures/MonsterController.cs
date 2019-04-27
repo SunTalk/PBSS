@@ -21,7 +21,7 @@ public class MonsterController : BaseControll
 
     private void OnValidate()
     {
-
+        base.onValidate();
         aIMovement = GetComponent<AIMovement>();
         attack = GetComponent<Attack>();
         baseMovement = GetComponent<BaseMovement>();
