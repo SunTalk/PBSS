@@ -1627,12 +1627,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66ab07e666234a1cbf5885847763485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovement: {fileID: 0}
+  baseMovement: {fileID: 3158160675509747756}
   attack: {fileID: 0}
   health: {fileID: 2178996691561482147}
-  DetectDistance: 0
+  DetectDistance: 2.79
   AttackDistance: 0
-  PlayerMove: {fileID: 3158160675509747756}
+  playerMove: {fileID: 3158160675509747756}
 --- !u!212 &3158160675509747752
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1702,7 +1702,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3158160675509747734}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1724,7 +1724,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.035577297, y: -0.5514407}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1735,7 +1735,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.58, y: 5.38}
+  m_Size: {x: 1.6665602, y: 2.355976}
   m_EdgeRadius: 0
 --- !u!114 &3158160675509747756
 MonoBehaviour:

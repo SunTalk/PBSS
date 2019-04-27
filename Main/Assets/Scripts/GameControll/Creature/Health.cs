@@ -37,8 +37,8 @@ public class Health : MonoBehaviour
     }
     private void Destroy()
     {
-        Destroy(gameObject);
-        gameObject.SetActive(false);
+        //Destroy(gameObject);
+        //gameObject.SetActive(false);
     }
 
 

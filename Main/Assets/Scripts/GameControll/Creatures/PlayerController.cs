@@ -6,7 +6,7 @@ public class PlayerController : BaseControll
 {
     public static PlayerController instance;
 
-    public PlayerMove PlayerMove;
+    public PlayerMove playerMove;
     //public Attack PlayerAttack;
 
     public override void Start()
@@ -21,7 +21,7 @@ public class PlayerController : BaseControll
     {
         //if (!attack.AttackStiffness)
         //{
-            PlayerMove.PlayerMoveMent();
+        playerMove.PlayerMoveMent();
         //}
     }
 
@@ -30,7 +30,10 @@ public class PlayerController : BaseControll
     private void OnValidate()
     {
         // Debug.Log("OnValidate");
-        PlayerMove = GetComponent<PlayerMove>();
+        base.onValidate();
+        playerMove = GetComponent<PlayerMove>();
+
+        Debug.Assert(playerMove != null);
     }
 
 }

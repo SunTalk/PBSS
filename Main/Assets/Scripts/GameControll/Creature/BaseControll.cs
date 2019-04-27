@@ -31,11 +31,11 @@ public class BaseControll : MonoBehaviour
         Debug.Assert(currentState != null);
     }
 
-    private void OnValidate()
+    protected void onValidate()
     {
-        Debug.Log("BaseControll");
+        //Debug.Log("BaseControll");
         //attack = GetComponent<Attack>();
-        //baseMovement = GetComponent<BaseMovement>();
+        baseMovement = GetComponent<BaseMovement>();
         health = GetComponent<Health>();
         DetectDistance = GetComponent<CircleCollider2D>().radius;
 
