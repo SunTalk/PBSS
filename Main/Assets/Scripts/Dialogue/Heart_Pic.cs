@@ -14,14 +14,14 @@ public class Heart_Pic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        heartpict.GetComponent<Image>().sprite = heartgot2;
-
+        AddHeart();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+
     }
 
     public void AddHeart()
