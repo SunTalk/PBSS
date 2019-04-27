@@ -73,8 +73,8 @@
     <Compile Include="Assets\Scripts\GameControll\Creature\IdleState.cs" />
     <Compile Include="Assets\Scripts\GameControll\Creature\Istate.cs" />
     <Compile Include="Assets\Scripts\GameControll\Creature\Movement.cs" />
+    <Compile Include="Assets\Scripts\GameControll\Creatures\MonsterController.cs" />
     <Compile Include="Assets\Scripts\GameControll\Creatures\PlayerMove.cs" />
-    <Compile Include="Assets\Scripts\GameControll\MonsterController.cs" />
     <Compile Include="Assets\Scripts\GameControll\MonsterScriptObject.cs" />
     <Compile Include="Assets\Scripts\GameControll\PlantController.cs" />
     <Compile Include="Assets\Scripts\GameControll\PlantScriptObject.cs" />
