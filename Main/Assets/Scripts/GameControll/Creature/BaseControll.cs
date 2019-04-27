@@ -11,17 +11,17 @@ public class BaseControll : MonoBehaviour
     public Istate currentState;
     public IdleState idleState = new IdleState();
     public EvadeState evadeState = new EvadeState();
-    //public BaseMovement baseMovement;
-    //public Attack attack;
+    public BaseMovement baseMovement;
+    public Attack attack;
     //public Health health;
     [Header("Collider")]
     public float DetectDistance;
+    public float AttackDistance;
 
     public virtual void Start()
     {
-        //idleState.Enter(this);
-        //evadeState.Enter(this);
-        //ChangeState(idleState);
+        idleState.Enter(this);
+        evadeState.Enter(this);
     }
 
     public void ChangeState(Istate state)
@@ -36,7 +36,7 @@ public class BaseControll : MonoBehaviour
         //attack = GetComponent<Attack>();
         //baseMovement = GetComponent<BaseMovement>();
         //health = GetComponent<Health>();
-        //DetectDistance = GetComponent<CircleCollider2D>().radius;
+        DetectDistance = GetComponent<CircleCollider2D>().radius;
 
         Debug.Assert(gameObject.tag != "Untagged", gameObject.name + " Don't set tag");
         //Debug.Assert(attack != null, gameObject.name);

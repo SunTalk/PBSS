@@ -18,6 +18,8 @@ public class Attack : MonoBehaviour, Istate
     public GameObject targetObject;
     public bool readyAttack = true;
     public bool AttackStiffness = false;
+    public float AtkSpeed = 1f;
+    public float AtkPower = 1f;
 
     private void Start()
     {
@@ -39,19 +41,19 @@ public class Attack : MonoBehaviour, Istate
     }
     public void UPDATE()
     {
-        ////Debug.Log("Attack" + gameObject.tag);
-        //if (targetObject == null)
-        //{
-        //    baseControll.ChangeState(baseControll.idleState);
-        //}
-        //else if (baseControll.baseMovement.ChaseTarget())
-        //{
-        //    baseControll.ChangeState(baseControll.baseMovement);
-        //}
-        //else if(readyAttack)
-        //{
-        //    AttackCommand();
-        //}
+        Debug.Log("AttackState");
+        if (targetObject == null)
+        {
+            baseControll.ChangeState(baseControll.idleState);
+        }
+        else if (baseControll.baseMovement.ChaseTarget())
+        {
+            baseControll.ChangeState(baseControll.baseMovement);
+        }
+        else if(readyAttack)
+        {
+            AttackCommand();
+        }
     }
 
     public void Exit()
@@ -79,7 +81,8 @@ public class Attack : MonoBehaviour, Istate
 
     private void AttackCommand()
     {
-        //StartCoroutine(AttackTarget(targetObject.GetComponent<Health>()));
+        Debug.Log("Attack Player");
+        StartCoroutine(AttackTarget(targetObject.GetComponent<Health>()));
     }
 
 
@@ -90,24 +93,24 @@ public class Attack : MonoBehaviour, Istate
         targetObject = target;
     }
 
-    //private IEnumerator AttackTarget(Health target)
-    //{
-    //    readyAttack = false;
-    //    AttackStiffness = true;
-    //    if (animationPlay != null) animationPlay(AttackStiffness);
-    //    yield return new WaitForSeconds(1 / roleState.Speed.Value);
+    private IEnumerator AttackTarget(Health target)
+    {
+        readyAttack = false;
+        AttackStiffness = true;
+        if (animationPlay != null) animationPlay(AttackStiffness);
+        yield return new WaitForSeconds(1 / AtkSpeed);
 
-    //    if( target.TakeDamage(roleState.Attack.Value) ) targetObject = null;
+        //if( target.TakeDamage(1) ) targetObject = null;
 
-    //    AttackStiffness = false;
-    //    if (animationPlay != null) animationPlay(AttackStiffness);
-    //    readyAttack = true;
-    //}
+        AttackStiffness = false;
+        if (animationPlay != null) animationPlay(AttackStiffness);
+        readyAttack = true;
+    }
 
     public bool AttackAble(GameObject target)
     {
         if (target.gameObject.tag != this.gameObject.tag &&
-                (target.gameObject.tag == "Role" || target.gameObject.tag == "Enemy"))
+                (target.gameObject.tag == "Player" || target.gameObject.tag == "Monster"))
         {
             return true;
         }

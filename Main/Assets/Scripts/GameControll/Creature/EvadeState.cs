@@ -13,11 +13,12 @@ public class EvadeState : Istate
     }
     public void UPDATE()
     {
-        //baseControll.baseMovement.Move( baseControll.baseMovement.StartPosition - baseControll.transform.position);
-        //if(baseControll.baseMovement.TargetDistance(baseControll.baseMovement.StartPosition) < 2)
-        //{
-        //    baseControll.ChangeState(baseControll.idleState);
-        //}
+        Debug.Log("Evade");
+        baseControll.baseMovement.Move( baseControll.baseMovement.StartPosition - baseControll.transform.position);
+        if(baseControll.baseMovement.TargetDistance(baseControll.baseMovement.StartPosition) < 2)
+        {
+            baseControll.ChangeState(baseControll.idleState);
+        }
     }
 
     public void Exit()

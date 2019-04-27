@@ -13,15 +13,16 @@ public class IdleState : Istate
     }
     public void UPDATE()
     {
-        //if (baseControll.attack.targetObject != null)
-        //{
-        //    baseControll.ChangeState(baseControll.baseMovement);
-        //}
-        //// Go back to position
-        //else if( baseControll.baseMovement.TargetDistance(baseControll.baseMovement.StartPosition)>2 )
-        //{
-        //    baseControll.ChangeState(baseControll.evadeState);
-        //}
+        Debug.Log("Idle");
+        if (baseControll.attack.targetObject != null)
+        {
+            baseControll.ChangeState(baseControll.baseMovement);
+        }
+        // Go back to position
+        else if( baseControll.baseMovement.TargetDistance(baseControll.baseMovement.StartPosition)>2 )
+        {
+            baseControll.ChangeState(baseControll.evadeState);
+        }
     }
 
     public void Exit()

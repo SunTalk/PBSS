@@ -14,7 +14,7 @@ public class AIMovement : BaseMovement
     public override void UPDATE()
     {
         base.UPDATE();
-        Debug.Log("AIMovement" + gameObject.tag);
+        Debug.Log("AIMovement");
         if (attack.targetObject != null)
         {
             if (ChaseTarget())
@@ -37,8 +37,20 @@ public class AIMovement : BaseMovement
 
     }
 
+    public override bool ChaseTarget()
+    {
+        float distance = TargetDistance(baseControll.attack.targetObject.transform.position);
+        if (distance > (baseControll.DetectDistance * baseControll.AttackDistance))
+        {
+            return true;
+        }
+        return false;
+    }
+
     public override void OnValidate()
     {
         base.OnValidate();
+        attack = GetComponent<Attack>();
+        Debug.Assert(attack != null);
     }
 }

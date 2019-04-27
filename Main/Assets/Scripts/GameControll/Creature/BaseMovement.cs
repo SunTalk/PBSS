@@ -21,13 +21,6 @@ public class BaseMovement : MonoBehaviour, Istate
     public AnimationPlay animationPlay;
     public delegate void AnimationPlay(float x, float y, Vector2 lastMove, bool moving);
 
-    public virtual void OnValidate()
-    {
-        baseControll = GetComponent<BaseControll>();
-        Debug.Assert(baseControll != null);
-        StartPosition = transform.position;
-    }
-
     public virtual void Enter(BaseControll baseControll)
     {
     }
@@ -65,13 +58,8 @@ public class BaseMovement : MonoBehaviour, Istate
         return Vector2.Distance(transform.position, direction);
     }
     // Chase or Attack
-    public bool ChaseTarget()
+    public virtual bool ChaseTarget()
     {
-        //float distance = TargetDistance(baseControll.attack.targetObject.transform.position);
-        //if(distance > (baseControll.DetectDistance * baseControll.roleState.AttackDistanceRate))
-        //{
-        //    return true;
-        //}
         return false;
     }
 
@@ -86,5 +74,12 @@ public class BaseMovement : MonoBehaviour, Istate
     {
         transform.Translate(direction * Speed * Time.deltaTime);
         moving = true;
+    }
+
+    public virtual void OnValidate()
+    {
+        baseControll = GetComponent<BaseControll>();
+        Debug.Assert(baseControll != null);
+        StartPosition = transform.position;
     }
 }

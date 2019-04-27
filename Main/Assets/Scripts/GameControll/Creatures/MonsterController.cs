@@ -5,17 +5,18 @@ using UnityEngine;
 public class MonsterController : BaseControll
 {
     public AIMovement aIMovement;
-    public Attack attack;
 
     public override void Start()
     {
         base.Start();
+        ChangeState(idleState);
         OnValidate();
     }
 
     private void FixedUpdate()
     {
         currentState.UPDATE();
+        //Debug.Log(currentState);
     }
 
     public override void OnValidate()
@@ -23,6 +24,11 @@ public class MonsterController : BaseControll
         base.OnValidate();
 
         aIMovement = GetComponent<AIMovement>();
+        attack = GetComponent<Attack>();
+        baseMovement = GetComponent<BaseMovement>();
+
+        Debug.Assert(aIMovement != null);
+        Debug.Assert(attack != null);
         Debug.Assert(aIMovement != null);
     }
 }
