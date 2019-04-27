@@ -57,7 +57,6 @@ public class Talker : MonoBehaviour
                 ispressed = false;
                 RunNextTalk();
 
-
             }
 
         }
