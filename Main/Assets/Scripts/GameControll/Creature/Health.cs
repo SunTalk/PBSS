@@ -6,6 +6,7 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
+    public float MaxHealth = 1f;
     public float health = 1f;
     bool dead;
 
@@ -22,6 +23,11 @@ public class Health : MonoBehaviour
     public int GetHealth()
     {
         return (int)health;
+    }
+
+    public void Heal(float h)
+    {
+        if(health<MaxHealth)health += h;
     }
 
     public bool TakeDamage(float damage)
