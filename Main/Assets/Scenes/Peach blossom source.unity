@@ -1138,7 +1138,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1446,7 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovement: {fileID: 1879079823}
   attack: {fileID: 1879079824}
-  health: {fileID: 0}
+  health: {fileID: 1879079826}
   DetectDistance: 1.5
   AttackDistance: 1
   aIMovement: {fileID: 1879079823}
@@ -1576,8 +1576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04da92efce10b4e1aad1bc2eeab0ffdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  Particle_Blood: {fileID: 0}
+  health: 1
 --- !u!114 &2178996691561482147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,8 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04da92efce10b4e1aad1bc2eeab0ffdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  Particle_Blood: {fileID: 0}
+  health: 3
 --- !u!1 &3158160675509747734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,4 +1795,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

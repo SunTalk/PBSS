@@ -81,7 +81,7 @@ public class Attack : MonoBehaviour, Istate
 
     private void AttackCommand()
     {
-        Debug.Log("Attack Player");
+        //Debug.Log("Attack Player");
         StartCoroutine(AttackTarget(targetObject.GetComponent<Health>()));
     }
 
