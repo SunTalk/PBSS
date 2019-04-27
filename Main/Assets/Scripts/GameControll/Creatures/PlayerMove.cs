@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMove : BaseMovement
 {
     public AnimatorControll animatorControll;
+    public bool state = true;
+
     public void PlayerMoveMent()
     {
         moving = false;
@@ -12,27 +14,27 @@ public class PlayerMove : BaseMovement
         {
             Move(Vector3.right);
             lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
-            animatorControll.PlayDown();
         }
         else if (Input.GetKey(KeyCode.A))
         {
             Move(Vector3.left);
             lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
-            animatorControll.PlayDown();
         }
         else if (Input.GetKey(KeyCode.W))
         {
             Move(Vector3.up);
             lastMove = new Vector2(0, Input.GetAxisRaw("Vertical"));
             animatorControll.PlayUp();
+            state = false;
         }
         else if (Input.GetKey(KeyCode.S))
         {
             Move(Vector3.down);
             lastMove = new Vector2(0, Input.GetAxisRaw("Vertical"));
             animatorControll.PlayDown();
+            state = true;
         }
-        else{
+        else if( state ){
             animatorControll.PlayIdle();
         }
 

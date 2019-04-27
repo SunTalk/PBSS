@@ -15,4 +15,17 @@ public class TrapController : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
+        if (other.gameObject.tag == "Player")
+        {
+        	
+        }
+    }
+    // void OnCollisionEnter2D(Collision2D col)
+    // {
+    //     Debug.Log("OnCollisionEnter2D");
+    // }
 }

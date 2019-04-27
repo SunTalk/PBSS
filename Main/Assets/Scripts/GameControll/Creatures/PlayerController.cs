@@ -23,9 +23,12 @@ public class PlayerController : BaseControll
         //}
     }
 
+
+
     public override void OnValidate()
     {
         base.Start();
         PlayerMove = GetComponent<PlayerMove>();
     }
+
 }
