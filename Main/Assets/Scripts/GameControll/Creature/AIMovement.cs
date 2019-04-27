@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AIMovement : BaseMovement
 {
+    public Attack attack;
 
     private void Start()
     {
@@ -14,15 +15,15 @@ public class AIMovement : BaseMovement
     {
         base.UPDATE();
         Debug.Log("AIMovement" + gameObject.tag);
-        if (baseControll.attack.targetObject != null)
+        if (attack.targetObject != null)
         {
             if (ChaseTarget())
             {
-                ChasingTarget(baseControll.attack.targetObject.transform.position);
+                ChasingTarget(attack.targetObject.transform.position);
             }
             else
             {
-                baseControll.ChangeState(baseControll.attack);
+                baseControll.ChangeState(attack);
             }
         }
         else

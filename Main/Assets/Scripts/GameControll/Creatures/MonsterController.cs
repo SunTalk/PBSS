@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonsterController : BaseControll
 {
     public AIMovement aIMovement;
+    public Attack attack;
 
     public override void Start()
     {
