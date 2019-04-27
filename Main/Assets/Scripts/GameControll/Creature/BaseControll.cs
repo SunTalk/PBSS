@@ -31,7 +31,7 @@ public class BaseControll : MonoBehaviour
         Debug.Assert(currentState != null);
     }
 
-    public virtual void OnValidate()
+    private void OnValidate()
     {
         //attack = GetComponent<Attack>();
         //baseMovement = GetComponent<BaseMovement>();

@@ -27,10 +27,9 @@ public class PlayerController : BaseControll
 
 
 
-    public override void OnValidate()
+    private void OnValidate()
     {
-        //Debug.Log("OnValidate");
-        base.Start();
+        // Debug.Log("OnValidate");
         PlayerMove = GetComponent<PlayerMove>();
     }
 

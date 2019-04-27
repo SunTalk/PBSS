@@ -19,9 +19,8 @@ public class MonsterController : BaseControll
         //Debug.Log(currentState);
     }
 
-    public override void OnValidate()
+    private void OnValidate()
     {
-        base.OnValidate();
 
         aIMovement = GetComponent<AIMovement>();
         attack = GetComponent<Attack>();

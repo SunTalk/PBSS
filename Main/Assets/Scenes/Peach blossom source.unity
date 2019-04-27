@@ -1627,9 +1627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66ab07e666234a1cbf5885847763485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovement: {fileID: 0}
+  baseMovement: {fileID: 3158160675509747756}
   attack: {fileID: 0}
-  health: {fileID: 0}
+  health: {fileID: 2178996691561482147}
   DetectDistance: 0
   AttackDistance: 0
   PlayerMove: {fileID: 3158160675509747756}

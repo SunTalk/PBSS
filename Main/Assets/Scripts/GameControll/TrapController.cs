@@ -21,7 +21,10 @@ public class TrapController : MonoBehaviour
         Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         if (col.gameObject.tag == "Player")
         {
-        	
+        	col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
+        }else if (col.gameObject.tag == "Monster")
+        {
+        	col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
         }
     }
     // void OnCollisionEnter2D(Collision2D col)
