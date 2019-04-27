@@ -19,6 +19,11 @@ public class Health : MonoBehaviour
         health = h;
     }
 
+    public int GetHealth()
+    {
+        return (int)health;
+    }
+
     public bool TakeDamage(float damage)
     {
         health -= damage;
