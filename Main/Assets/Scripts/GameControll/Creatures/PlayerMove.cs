@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : BaseMovement
 {
-
+    public AnimatorControll animatorControll;
     public void PlayerMoveMent()
     {
         moving = false;
@@ -12,21 +12,28 @@ public class PlayerMove : BaseMovement
         {
             Move(Vector3.right);
             lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+            animatorControll.PlayDown();
         }
         else if (Input.GetKey(KeyCode.A))
         {
             Move(Vector3.left);
             lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+            animatorControll.PlayDown();
         }
         else if (Input.GetKey(KeyCode.W))
         {
             Move(Vector3.up);
             lastMove = new Vector2(0, Input.GetAxisRaw("Vertical"));
+            animatorControll.PlayUp();
         }
         else if (Input.GetKey(KeyCode.S))
         {
             Move(Vector3.down);
             lastMove = new Vector2(0, Input.GetAxisRaw("Vertical"));
+            animatorControll.PlayDown();
+        }
+        else{
+            animatorControll.PlayIdle();
         }
 
         if (animationPlay != null)
@@ -35,4 +42,12 @@ public class PlayerMove : BaseMovement
         }
 
     }
+
+    #region OnValidate
+    public override void OnValidate()
+    {
+        animatorControll = GetComponent<AnimatorControll>();
+        // Debug.Assert(animatorControll != null);
+    }
+    #endregion
 }
