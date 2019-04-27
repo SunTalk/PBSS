@@ -14,21 +14,21 @@ public class AIMovement : BaseMovement
     {
         base.UPDATE();
         Debug.Log("AIMovement" + gameObject.tag);
-        //if (baseControll.attack.targetObject != null)
-        //{
-        //    if (ChaseTarget())
-        //    {
-        //        ChasingTarget(baseControll.attack.targetObject.transform.position);
-        //    }
-        //    else
-        //    {
-        //        baseControll.ChangeState(baseControll.attack);
-        //    }
-        //}
-        //else
-        //{
-        //    baseControll.ChangeState(baseControll.idleState);
-        //}
+        if (baseControll.attack.targetObject != null)
+        {
+            if (ChaseTarget())
+            {
+                ChasingTarget(baseControll.attack.targetObject.transform.position);
+            }
+            else
+            {
+                baseControll.ChangeState(baseControll.attack);
+            }
+        }
+        else
+        {
+            baseControll.ChangeState(baseControll.idleState);
+        }
     }
 
     public override void Exit()
