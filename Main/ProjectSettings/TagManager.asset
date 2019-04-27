@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 3959817549
+    locked: 0
+  - name: Plant
+    uniqueID: 3716403107
+    locked: 0
+  - name: Prop
+    uniqueID: 1766729713
+    locked: 0
+  - name: Trap
+    uniqueID: 3550329355
+    locked: 0
+  - name: Monster
+    uniqueID: 372767667
+    locked: 0
+  - name: Player
+    uniqueID: 3279744675
+    locked: 0
