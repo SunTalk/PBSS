@@ -33,6 +33,7 @@ public class BaseControll : MonoBehaviour
 
     private void OnValidate()
     {
+        Debug.Log("BaseControll");
         //attack = GetComponent<Attack>();
         //baseMovement = GetComponent<BaseMovement>();
         health = GetComponent<Health>();

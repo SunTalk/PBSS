@@ -18,7 +18,6 @@ public class TrapController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         if (col.gameObject.tag == "Player")
         {
         	col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
