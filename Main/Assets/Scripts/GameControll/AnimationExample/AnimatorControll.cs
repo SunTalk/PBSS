@@ -16,39 +16,51 @@ public class AnimatorControll : MonoBehaviour
     {
         DisableAll();
 
-        animator.SetBool("Idle", true);
+        animator.SetBool("IsIdle", true);
     }
 
-    public void PlayWalk()
+    public void PlayUp()
     {
         DisableAll();
 
-        animator.SetBool("Walk", true);
+        animator.SetBool("IsUp", true);
+    }
+    public void PlayDown()
+    {
+        DisableAll();
+
+        animator.SetBool("IsDown", true);
+    }
+    public void PlayWalk()
+    {
+        // DisableAll();
+
+        // animator.SetBool("Walk", true);
     }
 
     public void PlayRun()
     {
-        DisableAll();
+        // DisableAll();
 
         animator.SetBool("Run", true);
     }
 
     public void PlayJump()
     {
-        DisableAll();
+        // DisableAll();
 
         animator.SetBool("Jump", true);
     }
     public void PlayFly()
     {
-        DisableAll();
+        // DisableAll();
 
         animator.SetBool("Fly", true);
     }
 
     public void PlayFall()
     {
-        DisableAll();
+        // DisableAll();
 
         animator.SetBool("Fall", true);
     }
@@ -65,7 +77,7 @@ public class AnimatorControll : MonoBehaviour
 
     public void PlaySprint()
     {
-        DisableAll();
+        // DisableAll();
 
         animator.SetBool("Fly", true);
     }
