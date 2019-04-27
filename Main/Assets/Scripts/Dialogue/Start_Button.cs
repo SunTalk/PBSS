@@ -12,7 +12,6 @@ public class Start_Button : MonoBehaviour
     void Start()
     {
         player.SetActive(false);
-        StartGame();
     }
 
     // Update is called once per frame

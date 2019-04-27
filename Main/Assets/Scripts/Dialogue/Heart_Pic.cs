@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Heart_Pic : MonoBehaviour
 {
     public GameObject heartpict;
+    public GameObject player;
     public Sprite heartgot0;
     public Sprite heartgot1;
     public Sprite heartgot2;
@@ -21,7 +22,6 @@ public class Heart_Pic : MonoBehaviour
     void Update()
     {
         
-
     }
 
     public void AddHeart()
