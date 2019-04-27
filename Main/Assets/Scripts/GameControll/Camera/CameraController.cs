@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public GameObject Player;
 
     [Header("Camera Range by Tilemap")]
-    public Tilemap tileMap;
+    //public Tilemap tileMap;
     public GameObject CameraLimit;
     private float xMin, xMax, yMin, yMax;
 

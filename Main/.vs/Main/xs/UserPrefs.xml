@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{DD8BB905-17D1-AAA6-C8A2-213488C298D6}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameControll/Camera/CameraController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameControll/PlayerController.cs" Line="3" Column="19" />
-      <File FileName="Assets/Scripts/GameControll/Creatures/PlayerMove.cs" Line="13" Column="25" />
-      <File FileName="Assets/Scripts/GameControll/Creature/BaseControll.cs" Line="14" Column="40" />
-      <File FileName="Assets/Scripts/GameControll/Creature/BaseMovement.cs" Line="87" Column="65" />
-      <File FileName="Assets/Scripts/GameControll/Camera/CameraController.cs" Line="34" Column="20" />
+      <File FileName="Assets/Scripts/GameControll/PlayerController.cs" Line="22" Column="27" />
+      <File FileName="Assets/Scripts/Scriptable/TreeTile.cs" Line="12" Column="5" />
+      <File FileName="Assets/Scripts/GameControll/Camera/CameraController.cs" Line="23" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
