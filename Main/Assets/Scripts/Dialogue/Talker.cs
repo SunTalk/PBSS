@@ -10,6 +10,7 @@ public class Talker : MonoBehaviour
     public GameObject TitleObject;
     public GameObject contentObject;
     public GameObject MasterObject;
+  //  public GameObject player;
     public int current;
     public int Talkmax;
     public int currentTalking;  //useless
@@ -47,6 +48,7 @@ public class Talker : MonoBehaviour
                 ispressed = false;
                 isTalking = false;
                 MasterObject.SetActive(false);
+                //player.SetActive(true);
             }
 
             else if(isTalking == true && ispressed)
@@ -54,6 +56,7 @@ public class Talker : MonoBehaviour
                 current++;
                 ispressed = false;
                 RunNextTalk();
+
 
             }
 
@@ -64,6 +67,8 @@ public class Talker : MonoBehaviour
     {
         current = ini;
         Talkmax = max;
+        movebackTalkDia();
+       // player.SetActive(false);
         MasterObject.transform.Find("TitleofTalkdia").GetComponent<Text>().text = AllTalk.people[current];
         MasterObject.transform.Find("ContentofTalkDia").GetComponent<Text>().text = AllTalk.contents[current];
     }
@@ -99,11 +104,12 @@ public class Talker : MonoBehaviour
 
     public void setTalkCont(string input)
     {
-        Debug.Log(input);
+        //Debug.Log(input);
         switch (input)
         {
-            case "name":
-                
+            case "name": // space for 松松
+                MasterObject.SetActive(true);
+                Talker.instace.setTest_Group(7, 14);
                 break;
             case "Trap":
                 Talker.instace.setTest_Group(4,6);
