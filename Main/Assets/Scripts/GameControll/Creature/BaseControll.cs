@@ -11,6 +11,8 @@ public class BaseControll : MonoBehaviour
     public Istate currentState;
     public IdleState idleState = new IdleState();
     public EvadeState evadeState = new EvadeState();
+    public PatrolState patrolState;
+    public DeathState deathState;
     public BaseMovement baseMovement;
     public Attack attack;
     public Health health;

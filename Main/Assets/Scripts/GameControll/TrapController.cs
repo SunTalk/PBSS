@@ -18,16 +18,30 @@ public class TrapController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col is BoxCollider2D)
         {
-        	col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
-        }else if (col.gameObject.tag == "Monster")
-        {
-        	col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
+            if (col.gameObject.tag == "Player")
+            {
+                Debug.Log("Player TakeDamage");
+                col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
+            }else if (col.gameObject.tag == "Monster")
+            {
+                Debug.Log("Monster TakeDamage");
+                col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
+            }
         }
     }
-    // void OnCollisionEnter2D(Collision2D col)
-    // {
-    //     Debug.Log("OnCollisionEnter2D");
-    // }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Debug.Log(collision.gameObject.name);
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        collision.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
+    //    }
+    //    else if (collision.gameObject.tag == "Monster")
+    //    {
+    //        Debug.Log("TakeDamage");
+    //        collision.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
+    //    }
+    //}
 }

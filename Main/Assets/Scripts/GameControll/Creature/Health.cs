@@ -38,12 +38,16 @@ public class Health : MonoBehaviour
     private void OnDeath()
     {
         dead = true;
-        Destroy();
+        if (gameObject.tag != "Player") StartCoroutine(Destroy());
     }
-    private void Destroy()
+    private IEnumerator Destroy()
     {
-        //Destroy(gameObject);
-        //gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<BaseControll>().ChangeState(gameObject.GetComponent<BaseControll>().deathState);
+        //transform.
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 
