@@ -483,12 +483,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58cf105e4ae974243b3b10813ae17f5b, type: 3}
---- !u!1839735485 &330039443 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 8417730457057339674, guid: 58cf105e4ae974243b3b10813ae17f5b,
-    type: 3}
-  m_PrefabInstance: {fileID: 330039442}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &338434592
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +749,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 2120670878}
-  tileMap: {fileID: 330039443}
   CameraLimit: {fileID: 338434592}
 --- !u!20 &519420031
 Camera:
@@ -1424,9 +1417,10 @@ GameObject:
   - component: {fileID: 2120670882}
   - component: {fileID: 2120670884}
   - component: {fileID: 2120670885}
+  - component: {fileID: 2120670886}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1585,3 +1579,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &2120670886
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120670878}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
