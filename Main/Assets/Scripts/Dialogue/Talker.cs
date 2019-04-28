@@ -64,15 +64,21 @@ public class Talker : MonoBehaviour
 
     public void setTest_Group(int ini , int max)
     {
-        current = ini;
-        Talkmax = max;
+        current = ini + AllTalk.language_number*AllTalk.language_change_rate;
+        Talkmax = max + AllTalk.language_number * AllTalk.language_change_rate;
         movebackTalkDia();
        // player.SetActive(false);
         MasterObject.transform.Find("TitleofTalkdia").GetComponent<Text>().text = AllTalk.people[current];
         MasterObject.transform.Find("ContentofTalkDia").GetComponent<Text>().text = AllTalk.contents[current];
     }
 
-    public bool Test_of_end(int input)
+    public void setText_Language(int ini, int max)
+    {
+        current = ini + AllTalk.language_number * AllTalk.language_change_rate;
+        Talkmax = max + AllTalk.language_number * AllTalk.language_change_rate;
+    }
+
+        public bool Test_of_end(int input)
     {
         if (input == Talkmax)
         {
