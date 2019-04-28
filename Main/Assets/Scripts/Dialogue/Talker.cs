@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Talker : MonoBehaviour
 {
+    public AudioSource Sfx1;
+
     public static Talker instace;
 
     public GameObject TitleObject;
@@ -23,14 +25,16 @@ public class Talker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Sfx1.Stop();
         MasterObject.SetActive(false);
         instace = this;
         current = 0;
         Talkmax = 0;
         isTalking = false;
-        has_talk = false;
-        has_finish = false;
-    removeTalkDia();
+        Talker.has_talk = false;
+        Talker.has_finish = false;
+        removeTalkDia();
+
     }
 
     // Update is called once per frame
@@ -49,12 +53,12 @@ public class Talker : MonoBehaviour
             else if (Test_of_end(current) && ispressed)
             {
                 removeTalkDia();
+
                 ispressed = false;
                 isTalking = false;
                 MasterObject.SetActive(false);
                 //player.SetActive(true);
             }
-
             else if(isTalking == true && ispressed)
             {
                 current++;
@@ -86,6 +90,11 @@ public class Talker : MonoBehaviour
     {
         if (input == Talkmax)
         {
+            Debug.Log((input == Talkmax) + "," + Talkmax + " "  + input);
+            if (input == 6 && isTalking == false)
+            {
+              //  Sfx1.Play();
+            }
             return true;
         } else {
             return false;
@@ -113,33 +122,37 @@ public class Talker : MonoBehaviour
 
     public void setTalkCont(string input)
     {
-        //Debug.Log(input);
+        Debug.Log(input);
         switch (input)
         {
             case "name": // space for 松松
-                if (has_talk == false)
+
+                //Talker.has_talk = true;
+                MasterObject.SetActive(true);
+                if (Talker.has_talk == false)
                 {
-                    MasterObject.SetActive(true);
                     Talker.instace.setTest_Group(7, 14);
-                    has_talk = true;
+                    Talker.has_talk = true;
                 }
-                if(has_talk == true && has_finish == true)
+                else if(Talker.has_talk == true && Talker.has_finish == true)
                 {
                     Talker.instace.setTest_Group(2, 3);
                 }
                 else
                 {
                     Talker.instace.setTest_Group(1,1);
-                }
+                } 
                 break;
             case "Trap":
                 Talker.instace.setTest_Group(4,6);
                 MasterObject.SetActive(true);
                 break;
-            case "speed_up_staff_test":  // maybe not used
-                //ItemSlot.itemslot1.setPicture();
-                //ItemSlot.itemslot1.erasePicture();
-                //Debug.Log("it should be shoes.");
+            case "speed_up_staff":  // maybe not used
+                                    //ItemSlot.itemslot1.setPicture();
+                                    //ItemSlot.itemslot1.erasePicture();
+                                    //Debug.Log("it should be shoes.");
+
+                if(Talkmax == 6) Sfx1.Play();
                 break;
             case "Ice":
                 Talker.instace.setTest_Group(4, 6);

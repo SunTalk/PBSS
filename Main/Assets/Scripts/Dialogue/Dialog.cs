@@ -9,17 +9,21 @@ public class Dialog : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerEnter");
-        if (collision.gameObject.name.ToString() == "Player")
+        if(collision is BoxCollider2D)
         {
-            if (Talker.instace.isTalking == false)
+            if (collision.gameObject.name.ToString() == "Player")
             {
-                Talker.instace.movebackTalkDia();
-                Talker.instace.isTalking = true;
-                CollidResever = this.name.ToString();
-                Talker.instace.setTalkCont(CollidResever.ToString());
-                Debug.Log(CollidResever);
+                if (Talker.instace.isTalking == false)
+                {
+                    Talker.instace.gameObject.SetActive(true);
+                    Talker.instace.movebackTalkDia();
+                    Talker.instace.isTalking = true;
+                    CollidResever = this.name.ToString();
+                    Talker.instace.setTalkCont(CollidResever);
+                    Talker.instace.RunNextTalk();
+                }
             }
         }
+       
     }
 }

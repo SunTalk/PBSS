@@ -40,13 +40,13 @@ public static class AllTalk
         "當然(もちろん)", "很好，那就交給你了，分別是西方冰靈樹的果實 跟 東方烈焰泉的泉眼 ，你的時間不多了，動作快。" // 14
     };
     public static string[] people = new string[] {
-        "主角" , "Song Song", "主角", "Song Song" ,  "主角" ,  "主角" ,  "主角",  //(0-6)
-        "主角" , "Sage" , "主角" , "Song Song" , "主角" , "Song Song" , "主角" ,  "Song Song"// 7-14
+        "Guan-Ming" , "Song Song", "Guan-Ming", "Song Song" ,  "Guan-Ming" ,  "Guan-Ming" ,  "Guan-Ming",  //(0-6)
+        "Guan-Ming" , "Sage" , "Guan-Ming" , "Song Song" , "Guan-Ming" , "Song Song" , "Guan-Ming" ,  "Song Song"// 7-14
         ,
         //+14
 
-        "主角" , "松松", "主角", "松松" ,  "主角" ,  "主角" ,  "主角" ,//0-6
-        "主角" , "賢者(吉祥物)" , "主角" , "松松" , "主角" , "松松" , "主角" ,  "松松"// 7-14
+        "觀明" , "松松", "觀明", "松松" ,  "觀明" ,  "觀明" ,  "觀明" ,//0-6
+        "觀明" , "賢者(吉祥物)" , "觀明" , "松松" , "觀明" , "松松" , "觀明" ,  "松松"// 7-14
       
 
 
