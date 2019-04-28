@@ -15,6 +15,8 @@ public class Talker : MonoBehaviour
     public int Talkmax;
     public int currentTalking;  //useless
     public bool isTalking;
+    private bool has_talk ;
+    private bool has_finish ;
 
     public Text[] texs;
 
@@ -26,7 +28,9 @@ public class Talker : MonoBehaviour
         current = 0;
         Talkmax = 0;
         isTalking = false;
-        removeTalkDia();
+        has_talk = false;
+        has_finish = false;
+    removeTalkDia();
     }
 
     // Update is called once per frame
@@ -113,8 +117,20 @@ public class Talker : MonoBehaviour
         switch (input)
         {
             case "name": // space for 松松
-                MasterObject.SetActive(true);
-                Talker.instace.setTest_Group(7, 14);
+                if (has_talk == false)
+                {
+                    MasterObject.SetActive(true);
+                    Talker.instace.setTest_Group(7, 14);
+                    has_talk = true;
+                }
+                if(has_talk == true && has_finish == true)
+                {
+                    Talker.instace.setTest_Group(2, 3);
+                }
+                else
+                {
+                    Talker.instace.setTest_Group(1,1);
+                }
                 break;
             case "Trap":
                 Talker.instace.setTest_Group(4,6);
@@ -124,6 +140,14 @@ public class Talker : MonoBehaviour
                 //ItemSlot.itemslot1.setPicture();
                 //ItemSlot.itemslot1.erasePicture();
                 //Debug.Log("it should be shoes.");
+                break;
+            case "Ice":
+                Talker.instace.setTest_Group(4, 6);
+                MasterObject.SetActive(true);
+                break;
+            case "Lava":
+                Talker.instace.setTest_Group(4, 6);
+                MasterObject.SetActive(true);
                 break;
             default:
                 Debug.Log("Unidentified Contact.");
