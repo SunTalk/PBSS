@@ -15,9 +15,20 @@ public class PropController : MonoBehaviour
     void UseProp(GameObject gO)
     {
         Debug.Log("Use:" + gameObject.name);
+        StartCoroutine(BuffTimer(gO));
+
+    }
+
+    private IEnumerator BuffTimer(GameObject gO)
+    {
         propScriptObject.Use(gO);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(propScriptObject.BuffTimer);
+        propScriptObject.DeUse(gO);
         gameObject.SetActive(false);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision is BoxCollider2D)

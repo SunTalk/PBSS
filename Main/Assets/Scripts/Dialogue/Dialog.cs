@@ -9,7 +9,6 @@ public class Dialog : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerEnter");
         if (collision.gameObject.name.ToString() == "Player")
         {
             if (Talker.instace.isTalking == false)
