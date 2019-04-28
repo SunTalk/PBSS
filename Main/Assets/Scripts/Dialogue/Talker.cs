@@ -138,7 +138,7 @@ public class Talker : MonoBehaviour
                 {
                     MasterObject.SetActive(true);
                     Talker.instace.setTest_Group(2, 3);
-
+                    TileMapChange.instance.ChangeTile();
                 }
                 else
                 {

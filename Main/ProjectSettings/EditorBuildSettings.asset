@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Peach blossom source.unity
+    guid: c5fdfdbaeb6ba459d89830eaad4dbbd7
   m_configObjects: {}

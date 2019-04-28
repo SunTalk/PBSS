@@ -9,6 +9,7 @@ public class Dialog : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision);
         if(collision is BoxCollider2D)
         {
             if (collision.gameObject.name.ToString() == "Player")
