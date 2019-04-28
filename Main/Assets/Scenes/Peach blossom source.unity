@@ -541,6 +541,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8417730456300270894, guid: 58cf105e4ae974243b3b10813ae17f5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58cf105e4ae974243b3b10813ae17f5b, type: 3}
 --- !u!1 &338434592
@@ -1017,7 +1022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907177596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.24, y: -2.9, z: 0}
+  m_LocalPosition: {x: 0.52, y: 5.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1676,9 +1681,9 @@ GameObject:
   - component: {fileID: 1879079826}
   - component: {fileID: 1879079827}
   - component: {fileID: 1879079828}
-  - component: {fileID: 1879079829}
   - component: {fileID: 1879079831}
-  m_Layer: 0
+  - component: {fileID: 1879079829}
+  m_Layer: 8
   m_Name: Monster
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -1703,7 +1708,7 @@ MonoBehaviour:
   attack: {fileID: 1879079824}
   health: {fileID: 1879079826}
   DetectDistance: 9
-  AttackDistance: 0.2
+  AttackDistance: 0.3
   aIMovement: {fileID: 1879079823}
 --- !u!212 &1879079821
 SpriteRenderer:
@@ -1876,14 +1881,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879079819}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1927,6 +1932,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f952fb02906f44a6a898331f26019873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1923867943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8417730456300270894, guid: 58cf105e4ae974243b3b10813ae17f5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 330039442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!19719996 &1923867947
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923867943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
 --- !u!1001 &2004940866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1938,6 +1963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6185365167385329591, guid: 65b3b26bb8f7cad44bdc719da518e1c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6185365167385329587, guid: 65b3b26bb8f7cad44bdc719da518e1c4,
         type: 3}
@@ -2089,7 +2119,7 @@ GameObject:
   - component: {fileID: 950393055}
   - component: {fileID: 2178996691561482147}
   - component: {fileID: 3158160675509747736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2187,7 +2217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3158160675509747734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.75, y: 0.09, z: 0}
+  m_LocalPosition: {x: -1.88, y: 3.81, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2250,7 +2280,7 @@ MonoBehaviour:
   Speed: 5
   moving: 0
   lastMove: {x: 0, y: 0}
-  StartPosition: {x: 5.75, y: 0.09, z: 0}
+  StartPosition: {x: -1.88, y: 3.81, z: 0}
   Chasing: 0
   animatorControll: {fileID: 950393055}
   state: 1

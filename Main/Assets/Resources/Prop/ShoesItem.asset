@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4d4782891654fc3a587cc46a6af636, type: 3}
   m_Name: ShoesItem
   m_EditorClassIdentifier: 
+  BuffTimer: 5
