@@ -51,9 +51,9 @@ public static class AllTalk
 
 
     };
-    public static string[] types =
+    public static string[] Buttontypes = new string[]
     {
-        "plant", "not","asd"  // Currently Useless
+        "START" , "LANGUAGE" , "QUIT" , "開始遊戲" , "語言選擇" , "離開遊戲"
     };
 
 }

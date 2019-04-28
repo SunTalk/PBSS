@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Talker : MonoBehaviour
@@ -17,9 +15,10 @@ public class Talker : MonoBehaviour
     public int Talkmax;
     public int currentTalking;  //useless
     public bool isTalking;
-    private static bool has_talk ;
-    private static bool has_finish ;
 
+    public bool has_talk ;
+    public bool has_finish_lava ;
+    public bool has_finish_ice;
     public Text[] texs;
 
     // Start is called before the first frame update
@@ -31,8 +30,9 @@ public class Talker : MonoBehaviour
         current = 0;
         Talkmax = 0;
         isTalking = false;
-        Talker.has_talk = false;
-        Talker.has_finish = false;
+        has_talk = false;
+        has_finish_lava = false;
+        has_finish_ice = false;
         removeTalkDia();
 
     }
@@ -129,14 +129,16 @@ public class Talker : MonoBehaviour
 
                 //Talker.has_talk = true;
                 MasterObject.SetActive(true);
-                if (Talker.has_talk == false)
+                if (has_talk == false)
                 {
                     Talker.instace.setTest_Group(7, 14);
-                    Talker.has_talk = true;
+                    has_talk = true;
                 }
-                else if(Talker.has_talk == true && Talker.has_finish == true)
+                else if (has_finish_lava == true  && has_finish_ice == true)
                 {
+                    MasterObject.SetActive(true);
                     Talker.instace.setTest_Group(2, 3);
+
                 }
                 else
                 {
@@ -155,12 +157,16 @@ public class Talker : MonoBehaviour
                 if(Talkmax == 6) Sfx1.Play();
                 break;
             case "Ice":
-                Talker.instace.setTest_Group(4, 6);
-                MasterObject.SetActive(true);
+                //Talker.instace.setTest_Group(4, 6);
+                has_finish_ice = true;
+                //MasterObject.SetActive(true);
+                Debug.Log("ice fin");
                 break;
             case "Lava":
-                Talker.instace.setTest_Group(4, 6);
-                MasterObject.SetActive(true);
+                //Talker.instace.setTest_Group(4, 6);
+                //MasterObject.SetActive(true);
+                has_finish_lava = true;
+                Debug.Log("lava fin");
                 break;
             default:
                 Debug.Log("Unidentified Contact.");
