@@ -1,5 +1,5 @@
 # PBSS
-
+Game Jam in two days with teamwork!
 
 ## Unity Version
 2018.3.5f1
