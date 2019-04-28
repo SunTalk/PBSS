@@ -13,7 +13,7 @@ public class TileMapChange : MonoBehaviour
     void Start()
     {
         instance = this;
-        ChangeTile();
+        //ChangeTile();
     }
 
     public void ChangeTile()
