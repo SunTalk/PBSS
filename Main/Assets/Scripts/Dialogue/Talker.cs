@@ -15,8 +15,8 @@ public class Talker : MonoBehaviour
     public int Talkmax;
     public int currentTalking;  //useless
     public bool isTalking;
-    private bool has_talk ;
-    private bool has_finish ;
+    private static bool has_talk ;
+    private static bool has_finish ;
 
     public Text[] texs;
 
