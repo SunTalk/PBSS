@@ -17,13 +17,13 @@ public class PropShoes : PropScriptObject
     public override void DeUse(GameObject gameObject)
     {
         base.DeUse(gameObject);
-        gameObject.GetComponent<BaseMovement>().Speed /= 2;
+        gameObject.GetComponent<BaseMovement>().Speed = 5;
         ItemSlot.itemslot1.erasePicture();
     }
 
     private void ShoesBuff(GameObject gameObject)
     {
-        gameObject.GetComponent<BaseMovement>().Speed *= 2;
+        gameObject.GetComponent<BaseMovement>().Speed = 10;
         ItemSlot.itemslot1.setPicture();
     }
 }
