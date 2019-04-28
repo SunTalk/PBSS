@@ -31,7 +31,7 @@ public class PropController : MonoBehaviour
     {
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(50);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
