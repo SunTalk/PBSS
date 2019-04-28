@@ -31,8 +31,7 @@ public class Start_Button : MonoBehaviour
         Talker.instace.movebackTalkDia();
         Talker.instace.isTalking = true;
         Talker.instace.RunNextTalk();
-       // Talker.instace.ispressed = false;
-
-
+        // Talker.instace.ispressed = false;
+        TimerDownCount.instance.StartTimer();
     }
 }
