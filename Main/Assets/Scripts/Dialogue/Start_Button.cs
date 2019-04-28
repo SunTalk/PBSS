@@ -6,11 +6,13 @@ public class Start_Button : MonoBehaviour
 {
     public GameObject menu;
     public GameObject player;
+    public GameObject LanguageMenu;
     public static Start_Button instace;
 
     // Start is called before the first frame update
     void Start()
     {
+        LanguageMenu.SetActive(false);
         player.SetActive(false);
     }
 
@@ -30,5 +32,7 @@ public class Start_Button : MonoBehaviour
         Talker.instace.isTalking = true;
         Talker.instace.RunNextTalk();
        // Talker.instace.ispressed = false;
+
+
     }
 }
