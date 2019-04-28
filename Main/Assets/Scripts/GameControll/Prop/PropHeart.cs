@@ -11,7 +11,7 @@ public class PropHeart : PropScriptObject
     public override void Use(GameObject gameObject)
     {
         base.Use(gameObject);
-        Debug.Log("PropHeartScriptObject");
+        //Debug.Log("PropHeartScriptObject");
         gameObject.GetComponent<Health>().Heal(1);
     }
 }

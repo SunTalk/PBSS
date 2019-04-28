@@ -14,7 +14,7 @@ public class PropController : MonoBehaviour
 
     void UseProp(GameObject gO)
     {
-        Debug.Log("Use:" + gameObject.name);
+        //Debug.Log("Use:" + gameObject.name);
         StartCoroutine(BuffTimer(gO));
 
     }
@@ -22,11 +22,18 @@ public class PropController : MonoBehaviour
     private IEnumerator BuffTimer(GameObject gO)
     {
         propScriptObject.Use(gO);
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        StartCoroutine(ReSpawn());
         yield return new WaitForSeconds(propScriptObject.BuffTimer);
         propScriptObject.DeUse(gO);
-        gameObject.SetActive(false);
+    }
+
+    private IEnumerator ReSpawn()
+    {
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(50);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

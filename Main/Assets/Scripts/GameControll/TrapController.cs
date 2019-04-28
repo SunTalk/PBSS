@@ -20,13 +20,14 @@ public class TrapController : MonoBehaviour
     {
         if (col is BoxCollider2D)
         {
+            Debug.Log(col);
             if (col.gameObject.tag == "Player")
             {
-                Debug.Log("Player TakeDamage");
+                //Debug.Log("Player TakeDamage");
                 col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
             }else if (col.gameObject.tag == "Monster")
             {
-                Debug.Log("Monster TakeDamage");
+                //Debug.Log("Monster TakeDamage");
                 col.gameObject.GetComponent<BaseControll>().health.TakeDamage(1);
             }
         }
