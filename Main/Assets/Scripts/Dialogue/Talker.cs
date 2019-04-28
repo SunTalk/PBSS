@@ -114,6 +114,11 @@ public class Talker : MonoBehaviour
                 Talker.instace.setTest_Group(4,6);
                 MasterObject.SetActive(true);
                 break;
+            case "speed_up_staff_test":  // maybe not used
+                //ItemSlot.itemslot1.setPicture();
+                //ItemSlot.itemslot1.erasePicture();
+                //Debug.Log("it should be shoes.");
+                break;
             default:
                 Debug.Log("Unidentified Contact.");
                 break;
